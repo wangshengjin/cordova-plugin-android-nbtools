@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-android-nbtools"
+        version="1.0.0">
+    
+    <name>NBTools</name>
+    
+    <js-module src="www/NBTools.js" name="NBTools">
+        <clobbers target="window.plugins.NBTools" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        
+        <source-file src="src/android/NBTools.java" target-dir="src/com/nbtools" />
+        
+        <config-file target="res/xml/config.xml" parent="/widget/plugins">
+            <feature name="NBTools">
+                <param name="android-package" value="com.nbtools.NBTools"/>
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
