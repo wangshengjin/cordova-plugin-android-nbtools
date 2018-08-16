@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-android-nbtools"
+        id="cordova-plugin-nbtools"
         version="1.0.0">
     
     <name>NBTools</name>
@@ -9,6 +9,17 @@
     <js-module src="www/NBTools.js" name="NBTools">
         <clobbers target="window.plugins.NBTools" />
     </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <header-file src="src/ios/NBTools.h" />
+        <source-file src="src/ios/NBTools.m" />
+        <config-file target="config.xml" parent="/widget/plugins">
+            <feature name="NBTools">
+                <param name="ios-package" value="NBTools"/>
+            </feature>
+        </config-file>
+    </platform>
     
     <!-- android -->
     <platform name="android">

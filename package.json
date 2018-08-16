@@ -1,23 +1,25 @@
 {
-  "name": "cordova-plugin-android-nbtools",
+  "name": "cordova-plugin-nbtools",
   "version": "1.0.0",
   "description": "tools plugin",
   "cordova": {
-    "id": "cordova-plugin-android-nbtools",
+    "id": "cordova-plugin-nbtools",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "keywords": [
     "nbtools",
-    "cordova-android"
+    "cordova-android",
+    "cordova-ios"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wangshengjin/cordova-plugin-android-nbtools"
+    "url": "https://github.com/wangshengjin/cordova-plugin-nbtools"
   },
   "bugs": {
-    "url": "https://github.com/wangshengjin/cordova-plugin-android-nbtools/issues"
+    "url": "https://github.com/wangshengjin/cordova-plugin-nbtools/issues"
   },
   "author": "wangshengjin",
   "license": "MIT"
