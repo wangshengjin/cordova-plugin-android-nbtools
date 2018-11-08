@@ -11,5 +11,6 @@
 
 - (void)isPad:(CDVInvokedUrlCommand*)command;
 - (void)isPadFromscreen:(CDVInvokedUrlCommand*)command;
+- (void)hideBottomNavigationBar:(CDVInvokedUrlCommand*)command;
 - (Boolean)getIsPad;
 @end

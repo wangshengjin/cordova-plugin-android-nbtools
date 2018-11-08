@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
 
 public class NBTools extends CordovaPlugin {
@@ -52,8 +53,31 @@ public class NBTools extends CordovaPlugin {
             }
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, boo));
             return true;
+        }else if(action.equals("hideBottomNavigationBar")) {
+          this.hideBottomNavigationBar(callbackContext);
         }
         return false;
+    }
+
+    /**
+     * 隐藏android底部虚拟按钮
+     * @param callbackContext
+     * @info 参考：https://blog.csdn.net/QQxiaoqiang1573/article/details/79867127
+     */
+    private void hideBottomNavigationBar(CallbackContext callbackContext) {
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                View decorView = cordova.getActivity().getWindow().getDecorView();
+                int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_LOW_PROFILE
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY; // 这个是关键
+                decorView.setSystemUiVisibility(uiOptions);
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, true));
+            }
+        });
     }
 
 }

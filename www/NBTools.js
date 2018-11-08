@@ -9,6 +9,10 @@ NBTools.prototype.isPadFromscreen = function (successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "NBTools", "isPadFromscreen", []);
 };
 
+NBTools.prototype.hideBottomNavigationBar = function (successCallback, errorCallback) {
+  cordova.exec(successCallback, errorCallback, "NBTools", "hideBottomNavigationBar", []);
+};
+
 NBTools.install = function () {
   if (!window.plugins) {
     window.plugins = {};
