@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "ZYNetworkAccessibity.h"
-
+@implementation AppDelegate (NBTools)
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     [ZYNetworkAccessibity setAlertEnable:YES];
