@@ -14,8 +14,6 @@
     <platform name="ios">
         <header-file src="src/ios/NBTools.h" />
         <source-file src="src/ios/NBTools.m" />
-        <header-file src="src/ios/AppDelegate+NBTools.h" />
-        <source-file src="src/ios/AppDelegate+NBTools.m" />
         <header-file src="src/ios/ZYNetworkAccessibity.h" />
         <source-file src="src/ios/ZYNetworkAccessibity.m" />
         <config-file target="config.xml" parent="/widget/plugins">

@@ -7,8 +7,17 @@
 
 #import "NBTools.h"
 #import <Cordova/CDV.h>
+#import "ZYNetworkAccessibity.h"
 
 @implementation NBTools
+- (void)pluginInitialize {
+    [ZYNetworkAccessibity setAlertEnable:YES];
+    [ZYNetworkAccessibity setStateDidUpdateNotifier:^(ZYNetworkAccessibleState state) {
+        NSLog(@"setStateDidUpdateNotifier > %zd", state);
+    }];
+    [ZYNetworkAccessibity start];
+}
+
 - (void)isPad:(CDVInvokedUrlCommand*)command {
     Boolean boo = [self getIsPad];
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:boo];
